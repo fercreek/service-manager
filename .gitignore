@@ -19,3 +19,6 @@ nohup.out
 
 # Locks
 *.lock
+
+# Personal service config (use services.example.json as template)
+services.json

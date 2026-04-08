@@ -1,0 +1,56 @@
+[
+  {
+    "name": "My Next.js App",
+    "group": "Apps",
+    "dir": "~/Documents/my-nextjs-app",
+    "cmd": "npm run dev",
+    "port": 3000,
+    "url": "http://localhost:3000",
+    "color": "#0ea5e9"
+  },
+  {
+    "name": "My Rails API",
+    "group": "Apps",
+    "dir": "~/Documents/my-rails-api",
+    "cmd": "bundle exec rails server -p 3001",
+    "port": 3001,
+    "url": "http://localhost:3001",
+    "color": "#dc2626"
+  },
+  {
+    "name": "My Python App",
+    "group": "Apps",
+    "dir": "~/Documents/my-python-app",
+    "cmd": ".venv/bin/python app.py",
+    "port": 7860,
+    "url": "http://localhost:7860",
+    "color": "#7c3aed"
+  },
+  {
+    "name": "Redis",
+    "group": "Infrastructure",
+    "dir": "/",
+    "cmd": "redis-server",
+    "port": 6379,
+    "url": null,
+    "color": "#dc2626"
+  },
+  {
+    "name": "PostgreSQL",
+    "group": "Infrastructure",
+    "dir": "/",
+    "cmd": "pg_ctl start",
+    "port": 5432,
+    "url": null,
+    "color": "#2563eb"
+  },
+  {
+    "name": "Ollama",
+    "group": "Infrastructure",
+    "dir": "/",
+    "cmd": "ollama serve",
+    "port": 11434,
+    "url": "http://localhost:11434",
+    "color": "#16a34a"
+  }
+]

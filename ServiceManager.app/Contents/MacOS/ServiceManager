@@ -1,0 +1,26 @@
+#!/bin/bash
+# Service Manager — menu bar launcher
+APP_DIR="/Users/fernandocastaneda/Documents/service-manager"
+
+# Load .env
+if [ -f "$APP_DIR/.env" ]; then
+  export $(grep -v '^#' "$APP_DIR/.env" | grep -v '^$' | xargs)
+fi
+
+cd "$APP_DIR"
+
+# Create venv and install deps if needed
+if [ ! -d ".venv" ]; then
+  osascript -e 'display notification "Instalando dependencias, un momento..." with title "Service Manager"'
+  python3 -m venv .venv
+  .venv/bin/pip install -r requirements.txt --quiet
+elif ! .venv/bin/python -c "import rumps" 2>/dev/null; then
+  .venv/bin/pip install rumps --quiet
+fi
+
+# Kill any previous instance before launching
+pkill -f "python.*menubar" 2>/dev/null
+sleep 0.5
+
+# Run menu bar app (blocks until quit)
+exec .venv/bin/python menubar.py
